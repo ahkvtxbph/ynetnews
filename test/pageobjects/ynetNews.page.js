@@ -214,6 +214,7 @@ class ynetNewsPage {
         let date1=await this.getDate();
         let img1=await this.getImg();
         let summery1=await this.getSummery();
+        let author1='ynet_news';
         console.log("title is: " +await this.getTitle());
         console.log("img link: " +await this.getImg());
         console.log("sub title: " +await this.getSubTitle());
@@ -222,7 +223,7 @@ class ynetNewsPage {
         console.log("summery : " +await this.getSummery());
         console.log("-----------------------------------------------------------------------------------------------------------------------------------------------");
         console.log("num "+num);
-        arr1=[{title:title1, subTitle:subTitle1,time:time1, date:date1, image:img1, summary:summery1,count: num}];
+        arr1=[{title:title1, subTitle:subTitle1,time:time1, date:date1, image:img1, summary:summery1,author:author1,count: num}];
          
         const filter = { count: num.toString() };
         let doc1=await Ynet.findOne(filter);
@@ -235,7 +236,7 @@ class ynetNewsPage {
         }
         else{
             console.log("filter - "+doc1);
-            const update = {title:title1, subTitle:subTitle1,time:time1, date:date1, image:img1, summary:summery1,count: num}; 
+            const update = {title:title1, subTitle:subTitle1,time:time1, date:date1, image:img1, summary:summery1,author:author1,count: num}; 
             let doc = await Ynet.findOneAndUpdate(filter, update);
             console.log("Update "+num+" verify")
         }

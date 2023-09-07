@@ -15,6 +15,7 @@ const blogSchema = new mongoose.Schema(
     time: String,//[{type: String}],
     image: String,//[{type: String}],
     summary: String,//[{type: String}],
+    author:String,//[{type: String}],
     count: Number,//[{type: Number}]
 }
 );
