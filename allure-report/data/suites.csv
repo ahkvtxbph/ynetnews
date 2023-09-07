@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Sep 07 11:14:32 IDT 2023","Thu Sep 07 11:15:13 IDT 2023","40921","","Articles Data","","","","Main Article Data",""
+"passed","Thu Sep 07 11:19:15 IDT 2023","Thu Sep 07 11:19:46 IDT 2023","30086","","Articles Data","","","","Isreal News Data ",""
+"passed","Thu Sep 07 11:14:32 IDT 2023","Thu Sep 07 11:14:32 IDT 2023","287","","Articles Data","","","","Connect DB ",""
+"passed","Thu Sep 07 11:19:46 IDT 2023","Thu Sep 07 11:20:18 IDT 2023","32270","","Articles Data","","","","World News Data ",""
+"passed","Thu Sep 07 11:17:22 IDT 2023","Thu Sep 07 11:19:15 IDT 2023","113366","","Articles Data","","","","Political News Data ",""
+"passed","Thu Sep 07 11:15:13 IDT 2023","Thu Sep 07 11:17:22 IDT 2023","129209","","Articles Data","","","","Four Sub-Main Articles Data ",""
