@@ -116,8 +116,8 @@ class ynetNewsPage {
 
     async connectDB(){
         startStep('connectDB');       
-       // mongoose.connect('mongodb+srv://yaal-2122:wsmJQ3ggbFxFtHX@cluster0.qnlfmxm.mongodb.net/GQ-Dashboard')
-        mongoose.connect('mongodb+srv://shilo:a72Y53vXKjhNDAJn@chatnews.uaripa9.mongodb.net/GQ-Dashboard')
+         mongoose.connect('mongodb+srv://yaal-2122:wsmJQ3ggbFxFtHX@cluster0.qnlfmxm.mongodb.net/GQ-Dashboard')
+        //  mongoose.connect('mongodb+srv://shilo:a72Y53vXKjhNDAJn@chatnews.uaripa9.mongodb.net/GQ-Dashboard')
         .then(() => console.log('Connected!'));   
 
        
@@ -225,13 +225,19 @@ class ynetNewsPage {
         arr1=[{title:title1, subTitle:subTitle1,time:time1, date:date1, image:img1, summary:summery1,count: num}];
          
         const filter = { count: num.toString() };
-        if (filter=='null')
+        let doc1=await Ynet.findOne(filter);
+        console.log("filter - "+doc1);;
+        if (doc1== null)
         {
+            console.log("filter - "+doc1);
         const ynet= await Ynet.create(arr1[0]);
+        console.log("Insert "+num+" verify")
         }
         else{
+            console.log("filter - "+doc1);
             const update = {title:title1, subTitle:subTitle1,time:time1, date:date1, image:img1, summary:summery1,count: num}; 
             let doc = await Ynet.findOneAndUpdate(filter, update);
+            console.log("Update "+num+" verify")
         }
         
         
