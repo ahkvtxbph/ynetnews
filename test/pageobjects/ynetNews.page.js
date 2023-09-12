@@ -19,6 +19,7 @@ class ynetNewsPage {
     get summaryText(){ return $$("//*[@class='text_editor_paragraph rtl']");}
     get imageText(){ return $$("[id^='ReduxEditableImage_ArticleImageData']");}
     get dateTimeText(){ return $(".DateDisplay");}
+    get blog(){return $('.blogs-auto-feed-header a');}
     get authorsText(){return $("//*[@class='authors ']/span[1]/a")}
     
 /////////////////////////////articles/////////////////////////////////////////////////
@@ -74,10 +75,14 @@ class ynetNewsPage {
     }
 
      async getTime(){
+        let temp;
         startStep('print Time text');       
         endStep();
-        return await BasePage.getText(this.dateTimeText);
-
+        if ((await this.blog).isExisting)
+          {temp= '00:00';} 
+       else 
+        {temp= await BasePage.getText(this.dateTimeText);}
+        return temp;
     }
 
     async getDate(){
@@ -95,6 +100,7 @@ class ynetNewsPage {
     
 
     async getImg(){
+
         startStep('print img text');       
         let list= await this.imageText;
         endStep();
@@ -213,6 +219,8 @@ class ynetNewsPage {
         let time1=await this.getTime();
         let date1=await this.getDate();
         let img1=await this.getImg();
+         if (img1.length<1)
+         {img1='https://ynet-pic1.yit.co.il/picserver5/wcm_upload/2021/06/02/BylDa46E900/ynet_menu_logo_2x.png'}
         let summery1=await this.getSummery();
         let author1='ynet_news';
         console.log("title is: " +await this.getTitle());
