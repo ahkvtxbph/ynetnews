@@ -78,10 +78,12 @@ class ynetNewsPage {
         let temp;
         startStep('print Time text');       
         endStep();
-        if ((await this.blog).isExisting)
-          {temp= '00:00';} 
+        if ((await this.dateTimeText).isExisting)
+          {temp= '00:00';
+          temp= await BasePage.getText(this.dateTimeText);} 
        else 
-        {temp= await BasePage.getText(this.dateTimeText);}
+        {temp= await BasePage.getText(this.dateTimeText);
+            temp= '00:00'}
         return temp;
     }
 
