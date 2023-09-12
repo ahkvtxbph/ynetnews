@@ -158,7 +158,7 @@ exports.config = {
     before: async function (capabilities, specs) {
         await browser.url("/news");
         await browser.maximizeWindow();
-        await browser.minimizeWindow();
+        //await browser.minimizeWindow();
     },
     /**
      * Runs before a WebdriverIO command gets executed.

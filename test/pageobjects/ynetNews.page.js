@@ -78,11 +78,13 @@ class ynetNewsPage {
         let temp;
         startStep('print Time text');       
         endStep();
-        if ((await this.dateTimeText).isExisting)
-          {temp= '00:00';
+        let status=await this.dateTimeText.isExisting();
+        //console.log('Shilo dateTime '+status)
+        if (status)
+          {console.log('Shilo dateTime '+status)
           temp= await BasePage.getText(this.dateTimeText);} 
        else 
-        {temp= await BasePage.getText(this.dateTimeText);
+        {console.log('Shilo dateTime '+status)
             temp= '00:00'}
         return temp;
     }
