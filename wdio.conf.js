@@ -25,6 +25,7 @@ exports.config = {
         browserName: 'chrome',
         'goog:chromeOptions': {
             args: [
+               'headless',
               '--incognito',
               '--disable-blink-features=AutomationControlled',
 
