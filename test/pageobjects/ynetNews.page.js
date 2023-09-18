@@ -223,8 +223,8 @@ class ynetNewsPage {
         let time1=await this.getTime();
         let date1=await this.getDate();
         let img1=await this.getImg();
-         if (img1.length<1)
-         {img1='https://ynet-pic1.yit.co.il/picserver5/wcm_upload/2021/06/02/BylDa46E900/ynet_menu_logo_2x.png'}
+         if (img1.length<1)         
+         {img1='https://assets-global.website-files.com/63d8fee58e897e0396075286/64ca2a626e35720cb0af8c87_1%20YNET%20%D7%99%D7%93%D7%99%D7%A2%D7%95%D7%AA-04.png'}
         let summery1=await this.getSummery();
         let author1='ynet_news';
         console.log("title is: " +await this.getTitle());

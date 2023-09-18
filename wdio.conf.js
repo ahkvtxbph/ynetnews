@@ -8,7 +8,8 @@ exports.config = {
 
 
     specs: [
-        './test/specs/**/ynetTest.e2e.js'
+        
+       './test/specs/**/ynetTest.e2e.js'
     ],
     // Patterns to exclude.
     exclude: [
